@@ -4,11 +4,13 @@ const { DataTypes , UUID , UUIDV4 } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('breed', {
-    id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true},
     name: { type: DataTypes.STRING, allowNull: false,},
-    height:{ type: DataTypes.INTEGER, allowNull: false},
-    weight:{ type: DataTypes.INTEGER, allowNull: false},
-    yearsLife:{ type: DataTypes.INTEGER},
-  },{ updatedAt: false}
+    weight_imperial:{ type: DataTypes.STRING, allowNull: false},
+    weight_metric:{ type: DataTypes.STRING, allowNull: false},
+    height_imperial:{ type: DataTypes.STRING, allowNull: false},
+    height_metric:{ type: DataTypes.STRING, allowNull: false},
+    life_span:{ type: DataTypes.STRING},
+    createByOne: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false}
+  },{ timestamps: false}
  );
 };
