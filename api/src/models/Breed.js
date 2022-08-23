@@ -10,6 +10,7 @@ module.exports = (sequelize) => {
     height_imperial:{ type: DataTypes.STRING, allowNull: false},
     height_metric:{ type: DataTypes.STRING, allowNull: false},
     life_span:{ type: DataTypes.STRING},
+    image_url: {type: DataTypes.STRING},
     createByOne: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false}
   },{ timestamps: false}
  );

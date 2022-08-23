@@ -23,7 +23,8 @@ const getApiBreed = async () => {
           weight_metric: d.weight.metric,
           height_imperial: d.height.imperial,
           height_metric: d.height.metric,
-          life_span: d.life_span
+          life_span: d.life_span,
+          image_url: d.image.url
        }
       });    
     // busca los Temperamentos en la Db

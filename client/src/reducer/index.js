@@ -1,18 +1,43 @@
 const initialState = {
-	allBreeds: [],
 	breeds: [],
+    breedsForm: [],
 	detail: [],
 	temperaments: []
 }
 
 function rootReducer (state=initialState, action) {
-	switch(action.temperament) {
+	switch(action.type) {
+        case 'GET_BREEDS':
+			return {
+				...state,
+				breeds: action.payload,
+			}
+        case 'GET_NAME_BREEDS':
+            return {
+                ...state,
+                breeds: action.payload
+            }
+        case 'GET_NAME_BREEDS_FORM':
+                return {
+                    ...state,
+                    breedsForm: action.payload
+                }
+        case 'CLEAR_NAME_BREEDS_FORM':
+            return {
+                ...state,
+                breedsForm: []
+            }
+        case 'GET_DETAILS':
+            return {
+                ...state,
+                detail: action.payload
+            }
 		case 'GET_TEMPERAMENTS':
 			return {
 				...state,
 				temperaments: action.payload,
 			}
-
+            
 		default:
 			return state;	
 	}

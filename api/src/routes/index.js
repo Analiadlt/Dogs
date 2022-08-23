@@ -18,9 +18,9 @@ router.get ('/breeds', async (req, res)=>{
         let thereAre = await Breed.findAll();
         // si no tengo datos en la DB creo los registros
         if (!thereAre.length) await getApiBreed();
-            } catch (error) {
-            console.log(error)
-         }
+    } catch (error) {
+            res.status(404).send('Breeds not found.');
+        }
     if (name) {
         try {
           let bree = await Breed.findAll({
@@ -31,29 +31,30 @@ router.get ('/breeds', async (req, res)=>{
               }
             });
            return res.json(bree);
-        }  catch(error) {console.log(error);}
+        }  catch(error) { res.status(404).send('Breed not found.');}
   } else if (req.query.filter) {
         try {
             let bree = await Breed.findAll({
                 where: {
-                    status: req.query.filter
+                    name: req.query.filter
                 },
-                limit: 6,
+                limit: 8,
                 offset: req.query.page,
                 order:[["name", req.query.order]],
                 include: { model: Temperament}
             });
             return res.json (bree)
-        } catch(error) {console.log(error);}
+        } catch(error) { res.status(404).send('Breeds not found.');}
         } else {
             try {
                 let bree = await Breed.findAll({
-                    // limit: 6,
-                    // offset: req.query.page,
-                    //include: { model: Temperament }
+                    limit: 8,
+                    offset: req.query.page,
+                    order:[["name", req.query.order]],
+                    include: { model: Temperament }
                 });
                 return res.json(bree)
-            } catch (error) {console.log(error);}
+            } catch (error) { res.status(404).send('Breeds not found.');}
          }
 });
 
@@ -63,7 +64,7 @@ router.get("/breed/:id", async (req, res) => {
         let bree = await Breed.findByPk(id);
         return res.json(bree);
     } catch (error) {
-        console.log(error)
+        res.status(404).send('Breeds not found.');
     }
 })
 
@@ -75,7 +76,7 @@ router.get("/temperaments", async (req, res) => {
         // si no tengo datos en la DB creo los registros
         if (!thereAre.length) await getApiTemperament();
         } catch (error) {
-            console.log(error)
+            res.status(404).send('Breeds not found.');
         }
     if (name) {
         try {
@@ -88,7 +89,7 @@ router.get("/temperaments", async (req, res) => {
             });
            return res.json(temp);
   }  catch(error) {
-      console.log(error)
+    res.status(404).send('Breeds not found.');
   }
 } else  {
     const allTemperaments = await Temperament.findAll();
@@ -97,7 +98,7 @@ router.get("/temperaments", async (req, res) => {
 
 router.post("/temperaments", async (req, res) =>{
     const temperament = req.body;
-    //{name:"temp1", breeId: [1,2,3]} por body viene el temperament y los Ids de las razas que lo tienen
+    //{name:"temp1", breedId: [1,2,3]} por body viene el temperament y los Ids de las razas que lo tienen
     try{
         let [temp, created] = await Temperament.findOrCreate({
             where: {
@@ -108,7 +109,7 @@ router.post("/temperaments", async (req, res) =>{
         await temp.setBreeds(temperament.breeId);
         return res.json(temp)
     } catch (error) {
-        console.log(error)
+        res.status(404).send('Temperaments not found.');
     }
 })
 
@@ -125,7 +126,7 @@ router.put("/breed/:id", async (req, res) => {
         });
         return res.json({ cambiado: true})
     } catch (error) {
-        console.log(error)
+        res.status(404).send('Breed not found.');
     }
 })
 
@@ -139,7 +140,7 @@ router.delete ("/breed/:id", async (req,res) => {
         });
         return res.json ({ borrado: true})
     } catch (error) {
-        console.log(error)
+        res.status(404).send('Breed not deleted.');
     }
 })
 
