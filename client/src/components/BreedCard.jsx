@@ -1,21 +1,18 @@
 import React from 'react';
 import styles from './BreedCard.module.css';
 
-export default function BreedCard({name, image, temperaments, id}) {
+export default function BreedCard({ id, name, image, temperaments }) {
 	return (
-		<div className = {styles.pokemoncard}>
-			<span className={styles.pokName}>{name}</span>
-			<img src={image} alt= '' width="100px" height="125px" />
-			<div className={styles.pokTypes}>
+		<div>
+			<span>{name}</span>
+			<img src={image} alt='' width="100px" height="125px" />
+			<div>
 				<label>Temperaments</label>
-				{/* <h4>{ (typeof id === 'number')? 
+				<h4>{ (typeof id === 'number')? 
 							temperaments?.reduce((e1,e2) => e1 + '-' + e2)
 							: temperaments?.map(el=>el.name + '- ')
-						}</h4> */}
-			</div>	
+						}</h4>
+			</div>
 		</div>
 	);
 }
-
-
-

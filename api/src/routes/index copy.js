@@ -1,5 +1,4 @@
 const { Router } = require('express');
-// const { Sequelize } = require('sequelize/dist');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const { Op, Breed, Temperament } = require('../db');
@@ -14,8 +13,6 @@ const router = Router();
 // acá está incluida la busqueda de todos y la de name por query
 router.get('/breeds', async (req, res) => {
     let name = req.query.name;
-    let filterBreed = req.query.filter;
-    let filterTemperament = req.query.temp;
 
     try {
         let thereAre = await Breed.findAll();
@@ -35,52 +32,36 @@ router.get('/breeds', async (req, res) => {
             });
             return res.json(bree);
         } catch (error) { res.status(404).send('Breed not found.'); }
-    }
-    if (filterBreed) {
+    } else if (req.query.filter) {
         try {
             let bree = await Breed.findAll({
                 where: {
-                    name: filterBreed
+                    name: req.query.filter
                 },
+                limit: 8,
+                offset: req.query.page,
+                order: [["name", req.query.order]],
+                include: { model: Temperament }
+            });
+            return res.json(bree)
+        } catch (error) { res.status(404).send('Breeds not found.'); }
+    } else {
+        try {
+            let bree = await Breed.findAll({
+                limit: 8,
+                offset: req.query.page,
+                order: [["name", req.query.order]],
                 include: { model: Temperament }
             });
             return res.json(bree)
         } catch (error) { res.status(404).send('Breeds not found.'); }
     }
-    if (filterTemperament && filterTemperament != 'All') {
-        try {
-            const allBreeds = await Breed.findAll({
-                include: {
-                    model: Temperament,
-                    where: {
-                        name: filterTemperament
-                    }
-                },
-                order: [["name", req.query.order]],
-            });
-            return res.json(allBreeds)
-        } catch (error) { res.status(404).send('Breeds not found.'); }
-    }
-    // else {
-    try {
-        let bree = await Breed.findAll({
-            limit: 8,
-            offset: req.query.page,
-            order: [["name", req.query.order]],
-            include: { model: Temperament }
-        });
-        return res.json(bree)
-    } catch (error) { res.status(404).send('Breeds not found.'); }
-    // }
 });
 
 router.get("/breed/:id", async (req, res) => {
     const id = req.params.id;
     try {
-        // let bree = await Breed.findByPk(id);
-        let bree = await Breed.findByPk(id, {
-            include: { model: Temperament }
-        });
+        let bree = await Breed.findByPk(id);
         return res.json(bree);
     } catch (error) {
         res.status(404).send('Breeds not found.');
@@ -89,17 +70,16 @@ router.get("/breed/:id", async (req, res) => {
 
 router.get("/breed", async (req, res) => {
     try {
-        // let breeds = await Breed.findAll({
-        //     attributes: [['name']],
-        // });
         let breeds = await Breed.findAll();
-        return res.json(breeds.map(b => b.name));
+        return res.json(breeds.map(b=>b.name));
     } catch (error) {
         res.status(404).send('Breeds not found.');
     }
 })
 
 router.get("/temperaments", async (req, res) => {
+    // let name = req.query.name;
+
     try {
         let thereAre = await Temperament.findAll();
         // si no tengo datos en la DB creo los registros
@@ -109,10 +89,9 @@ router.get("/temperaments", async (req, res) => {
     } catch (error) {
         res.status(404).send('Temperament not found.');
     }
-    const allTemperaments = await Temperament.findAll({
-        order: ["name"],
-    });
-    res.send(allTemperaments);
+    const allTemperaments = await Temperament.findAll();
+    // res.send(allTemperaments);
+    return res.json(allTemperaments.map(t=>t.name));
 })
 
 router.post("/temperaments", async (req, res) => {

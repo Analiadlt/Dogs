@@ -1,10 +1,10 @@
 import React from 'react';
-import{useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {getNameBreeds} from '../actions/index';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getNameBreeds } from '../actions/index';
 import styles from './SearchBar.module.css';
 
-export default function SearchBar(){
+export default function SearchBar() {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 
@@ -18,14 +18,14 @@ export default function SearchBar(){
 		dispatch(getNameBreeds(name));
 	};
 
-return (
-	<div className={styles.searchBar}>
-		<input
-		type = 'text'
-		placeholder= "Search for..."
-		onChange= {(e) => handleInputChange(e)}
-		/>
-		<button onClick={(e) => handleClick(e)}>Search for</button>
-	</div>
+	return (
+		<div className={styles.searchBar}>
+			<input
+				type='text'
+				placeholder="Search for..."
+				onChange={(e) => handleInputChange(e)}
+			/>
+			<button onClick={(e) => handleClick(e)}>Search for</button>
+		</div>
 	);
 }

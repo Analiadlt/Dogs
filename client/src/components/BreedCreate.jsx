@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate , NavLink }  from 'react-router-dom';
-import {postBreed, getNameBreedsForm, clearNameBreedsForm } from '../actions/index';
-import { useDispatch, useSelector} from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, NavLink } from 'react-router-dom';
+// import {postBreed, getNameBreedsForm, clearNameBreedsForm } from '../actions/index';
+import { postBreed, clearNameBreedsForm } from '../actions/index';
+// import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './BreedCreate.module.css';
 
 // function validate (input){
@@ -21,19 +23,21 @@ import styles from './BreedCreate.module.css';
 // 	return errors;
 // }
 
-export default function BreedCreate(){
+export default function BreedCreate() {
 	const dispatch = useDispatch();
-	const navigate  = useNavigate();
-	const breeds = useSelector((state)=> state.breedsForm);
-	const [name, setName] = useState('');
+	const navigate = useNavigate();
+	// const breeds = useSelector((state)=> state.breedsForm);
+	// const [name, setName] = useState('');
+	const [name] = useState('');
 	const [breedId, setBreedId] = useState([]);
-	const [breedName, setBreedName] = useState('');
-	const [breedObj, setBreedObj] = useState([]);
-	
-	useEffect(() => {
-		setBreedObj([...breedObj, ...breeds]);
-		setBreedId([...new Set(breedObj.map((b) => b.id))]);
-	}, [dispatch, breeds]);
+	// const [breedName, setBreedName] = useState('');
+	// const [breedObj, setBreedObj] = useState([]);
+	const [breedObj] = useState([]);
+
+	// useEffect(() => {
+	// 	setBreedObj([...breedObj, ...breeds]);
+	// 	setBreedId([...new Set(breedObj.map((b) => b.id))]);
+	// }, [dispatch, breeds]);
 
 	useEffect(() => {
 		setBreedId([...new Set(breedObj.map((b) => b.id))]);
@@ -68,10 +72,10 @@ export default function BreedCreate(){
 	// types.sort((a,b) => a.name < b.name ? -1 : +(a.name > b.name));
 	return (
 		<div >
-			<NavLink to='/home'><button className={styles.button}>Come back</button></NavLink>
-			<h1 className={styles.h1}>New Breed Creation</h1>
-			<form className={styles.newPokemon} onSubmit={(e)=>handleSubmit(e)}>
-				<div className={styles.inputDiv}>	
+			<NavLink to='/home'><button>Come back</button></NavLink>
+			<h1>New Breed Creation</h1>
+			<form onSubmit={(e) => handleSubmit(e)}>
+				<div>
 					<label>Temperaments:</label>
 					{/* <select className={styles.inputDiv} onChange={(e)=> handleName(e)}>
 						{ temperaments.map((temp) => (
@@ -80,7 +84,7 @@ export default function BreedCreate(){
 					</select> */}
 					{/* {errors.temperaments && <p className ={styles.errors}>{errors.temperaments}</p>} */}
 				</div>
-				<div className={styles.inputDiv}>
+				<div>
 					<label>Name:</label>
 					{/* <input type='text' value= {name} name='name' onChange={(e)=> handleName(e)} /> */}
 					{/* {errors.name && <p className ={styles.errors}>{errors.name}</p>} */}
@@ -110,15 +114,15 @@ export default function BreedCreate(){
 					<input type='text' value= {input.img} name='img' placeholder='Enter image url' onChange={(e)=> handleChange(e)}/>
 				</div>
 			 */}
-			{/* <button className={styles.button} type='submit' disabled={Object.keys(errors).length? true : false}>
+				{/* <button className={styles.button} type='submit' disabled={Object.keys(errors).length? true : false}>
 				Create Pokemon
 			</button> */}
-		</form>
-		{/* {input.types.map(el=>
+			</form>
+			{/* {input.types.map(el=>
 			<>
 			<p>{el}</p><button onClick={()=>handleDelete(el)}>x</button>
 			</>)
-		} */}		
-	</div>
+		} */}
+		</div>
 	);
 }

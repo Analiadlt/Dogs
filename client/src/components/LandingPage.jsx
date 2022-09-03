@@ -5,6 +5,7 @@ import landing from '../images/landing_breeds_dogs.jpg';
 import { useEffect } from 'react';
 import { getTemperaments } from '../actions';
 import { useDispatch } from 'react-redux';
+import { getAllBreeds } from '../actions/index';
 
 
 
@@ -13,6 +14,7 @@ export default function LandingPage() {
 
     useEffect(() => {
         dispatch(getTemperaments());
+	    dispatch(getAllBreeds());
     }, [dispatch])
 
 
@@ -22,17 +24,11 @@ export default function LandingPage() {
                 <h1 className={styles.h1}>Welcome</h1>
             </div>
             <img src={landing} alt="Breed" className={styles.img} />
-            {/* <div>
+            <div>
                 <Link to='/home'>
                     <button className={styles.enter}>Enter</button>
                 </Link>
-            </div> */}
-            <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Learn More</span>
-            </button>
+            </div>
         </div>
     );
 }

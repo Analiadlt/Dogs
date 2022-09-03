@@ -1,8 +1,14 @@
-body{
-	background-color: #3c444e;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-h1{
+ /* body{
+	background-color: #3c444e;
+} */
+
+/*h1{
     color: #f1ce3a ;
 }
 
@@ -18,22 +24,22 @@ h1{
 		flex-direction:  row;
 		justify-content:  center;
 	}
-}
+} */
 
-.button {
+/* .button {
 	position: relative;
 	width: 15rem;
 	padding:  0.5rem 4rem 0.25rem 0.25rem;
-	box-sizing: border-box; /*width+padding*/
+	box-sizing: border-box; 
 	border-style:  solid;
 	border-width: 2px;
 	border-color: black;
 	border-radius: 0.5rem;
 	font-weight: 500;
 	font-size: 1rem;
-}
+} */
 
-.button:hover {
+/* .button:hover {
 	color:  #3972B8;
 	background-color: #f1ce3a;
 	border-color: #3972B8;
@@ -44,7 +50,7 @@ h1{
 	position: relative;
 	width: 15rem;
 	padding:  0.5rem 4rem 0.25rem 0.25rem;
-	box-sizing: border-box; /*width+padding*/
+	box-sizing: border-box;
 	border-style:  solid;
 	border-width: 2px;
 	border-color: black;
@@ -52,3 +58,10 @@ h1{
 	font-weight: 500;
 	font-size: 1rem;
 }
+
+.filterBreeds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 70px 0;
+} */

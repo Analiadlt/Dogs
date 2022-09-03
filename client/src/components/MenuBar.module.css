@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative;
+    width: 30%;
+    height: 100rem;
+    float:left;
+    background: rosybrown;
+}
+
+h1 {
+    color: blue;
+    font-weight: bold;
+}
