@@ -1,21 +1,13 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
- /* body{
-	background-color: #3c444e;
-} */
-
-/*h1{
-    color: #f1ce3a ;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 .cards{
 	display: grid;
 	flex-direction: column;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(4, 1fr);
   	grid-template-rows: auto;
 }
 
@@ -24,7 +16,7 @@
 		flex-direction:  row;
 		justify-content:  center;
 	}
-} */
+} 
 
 /* .button {
 	position: relative;

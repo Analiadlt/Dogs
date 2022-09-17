@@ -4,11 +4,23 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBreeds } from '../actions/index';
 import BreedCard from './BreedCard';
-import MenuBar from './MenuBar';
+import NavBar from './NavBar';
 import Paginated from './Paginated';
+import styles from './Home.module.css';
+import FilterBar from './FilterBar';
+import OrderBar from './OrderBar';
+
+import { getTemperaments } from '../actions';
+import { getAllBreeds } from '../actions/index';
 
 export default function Home() {
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+        dispatch(getTemperaments());
+	    dispatch(getAllBreeds());
+    }, [dispatch])
+
 	//defino los estados locales de react
 	const [pages] = useState(0);
 	const [order] = useState('ASC');
@@ -24,10 +36,12 @@ export default function Home() {
 
 	return (
 		<div>
+			
+			<NavBar />
+			<FilterBar />
+			<OrderBar />
 
-			<MenuBar />
-
-			<div>
+			<div className={styles.cards}>
 				{filterBreeds?.map((b) => {
 					return (
 						<div key={b.id}>
