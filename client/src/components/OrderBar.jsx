@@ -1,18 +1,17 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getBreeds } from '../actions/index';
-// import BreedCard from './BreedCard';
-// import MenuBar from './MenuBar';
+import styles from './OrderBar.module.css';
 
 export default function OrderBar() {
 	const dispatch = useDispatch();
 	//defino los estados locales de react
-	const [pages, setPages] = useState(0);
+	const [pages] = useState(0);
 	const [order, setOrder] = useState('ASC');
-	const [filter, setFilter] = useState('');
-	const [temp, setTemp] = useState('');
+	const [filter] = useState('');
+	const [temp] = useState('');
 
 	useEffect(() => {
 		dispatch(getBreeds(pages, order, filter, temp));
@@ -32,7 +31,7 @@ export default function OrderBar() {
 		<div>
 			<div>
 				<h5>Alphabetic Order</h5>
-				<select onChange={(e) => changeOrder(e)}>
+				<select onChange={(e) => changeOrder(e)} className={styles.orderlist}>
 					<option value='ASC'>Ascendent</option>
 					<option value='DESC'>Descendent</option>
 				</select>

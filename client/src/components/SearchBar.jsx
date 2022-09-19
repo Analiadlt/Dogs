@@ -16,6 +16,7 @@ export default function SearchBar() {
 	const handleClick = (e) => {
 		e.preventDefault();
 		dispatch(getNameBreeds(name));
+		setName('');
 	};
 
 	return (

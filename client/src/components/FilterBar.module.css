@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-.filter{
-	position: relative;
+.filter {
+    position: relative;
     background-color: white;
-    width:min-content;
+    width: 35%;
     padding: 0.5rem 4rem 0.25rem 0.25rem;
     border-style: solid;
     border-width: 2px;
@@ -15,12 +15,12 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     text-decoration: none;
-    display: flex;
-    float: right;
+    /* display: inline-block; */
     /* margin: 0 auto; */
-	margin-top: 4rem;
-	margin-right: 6rem;
+    margin-top: 4rem;
+    margin-right: 6rem;
 }
+
 /* .filter {
 	position: relative;
 	margin: 0 auto;
@@ -37,8 +37,8 @@
 } */
 
 h5 {
-	font-size: 1.5rem;
-	position: relative;
-	margin-top: 5rem;
-	color: yellow;
+    font-size: 1.5rem;
+    position: relative;
+    margin-top: 5rem;
+    color: yellow;
 }

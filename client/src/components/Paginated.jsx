@@ -7,9 +7,9 @@ export default function Paginated() {
 	const dispatch = useDispatch();
 	//defino los estados locales de react
 	const [pages, setPages] = useState(0);
-	const [order, setOrder] = useState('ASC');
-	const [filter, setFilter] = useState('');
-	const [temp, setTemp] = useState('');
+	const [order] = useState('ASC');
+	const [filter] = useState('');
+	const [temp] = useState('');
 
 	useEffect(() => {
 		dispatch(getBreeds(pages, order, filter, temp));

@@ -31,7 +31,10 @@ router.get('/breeds', async (req, res) => {
                     name: {
                         [Op.iLike]: '%' + name + '%' //compara parte del nombre ignorando mayúsculas y minúsculas
                     }
-                }
+                },
+                include: { model: Temperament },
+                limit: 8,
+                offset: req.query.page,
             });
             return res.json(bree);
         } catch (error) { res.status(404).send('Breed not found.'); }

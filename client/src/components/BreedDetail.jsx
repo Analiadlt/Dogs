@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetail } from '../actions/index';
 import { useEffect } from 'react';
-import styles from './BreedDetail.module.css';
+// import styles from './BreedDetail.module.css';
 import default_img from '../images/pexels-pixabay-257540.jpg';
 
 export default function BreedDetail(props) {
@@ -39,7 +39,7 @@ export default function BreedDetail(props) {
 					</div>
 					: <p>Loading...</p>
 			}
-			<NavLink to='/home'>
+			<NavLink to='/'>
 				<button>Come back</button>
 			</NavLink>
 		</div>

@@ -7,8 +7,10 @@ import styles from './FilterBar.module.css';
 export default function FilterBar() {
 	const dispatch = useDispatch();
 	//defino los estados locales de react
-	const [pages, setPages] = useState(0);
-	const [order, setOrder] = useState('ASC');
+	// const [pages, setPages] = useState(0);
+	const [pages] = useState(0);
+	// const [order, setOrder] = useState('ASC');
+	const [order] = useState('ASC');
 	const [filter, setFilter] = useState('');
 	const [temp, setTemp] = useState('');
 
@@ -36,7 +38,7 @@ export default function FilterBar() {
 	return (
 		<div>
 			<div>
-			<h5>Filters</h5>
+				<h5>Filters</h5>
 				<select className={styles.filter} onChange={(e) => changeBreedFilter(e)}>
 					<option value="">All Breeds</option>
 					{allBreedsFilter.map((breedName) => (

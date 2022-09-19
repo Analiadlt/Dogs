@@ -48,7 +48,7 @@ export default function BreedCreate() {
 		dispatch(postBreed(name, breedId));
 		alert('Breed created.');
 		dispatch(clearNameBreedsForm());
-		navigate('/home');
+		navigate('/');
 	};
 	// const handleName = (e) => {
 	// 	e.preventDefault();
@@ -72,9 +72,9 @@ export default function BreedCreate() {
 	// types.sort((a,b) => a.name < b.name ? -1 : +(a.name > b.name));
 	return (
 		<div >
-			<NavLink to='/home'><button>Come back</button></NavLink>
+			<NavLink to='/'><button>Come back</button></NavLink>
 			<h1>New Breed Creation</h1>
-			<form onSubmit={(e) => handleSubmit(e)}>
+			<form className={styles.newBreed} onSubmit={(e) => handleSubmit(e)}>
 				<div>
 					<label>Temperaments:</label>
 					{/* <select className={styles.inputDiv} onChange={(e)=> handleName(e)}>

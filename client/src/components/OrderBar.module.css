@@ -1,0 +1,16 @@
+.orderlist {
+    position: relative;
+    background-color: white;
+    width: 35%;
+    padding: 0.5rem 4rem 0.25rem 0.25rem;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    /* margin: 0 auto; */
+    margin-top: 4rem;
+    margin-right: 6rem;
+}

@@ -7,8 +7,8 @@ import BreedCard from './BreedCard';
 import NavBar from './NavBar';
 import Paginated from './Paginated';
 import styles from './Home.module.css';
-import FilterBar from './FilterBar';
-import OrderBar from './OrderBar';
+// import FilterBar from './FilterBar';
+// import OrderBar from './OrderBar';
 
 import { getTemperaments } from '../actions';
 import { getAllBreeds } from '../actions/index';
@@ -38,15 +38,15 @@ export default function Home() {
 		<div>
 			
 			<NavBar />
-			<FilterBar />
-			<OrderBar />
+			{/* <FilterBar />
+			<OrderBar /> */}
 
 			<div className={styles.cards}>
 				{filterBreeds?.map((b) => {
 					return (
 						<div key={b.id}>
-							<Link to={`/home/${b.id}`}>
-								<BreedCard key={b.id} name={b.name} image={b.image_url} temperaments={b.temperaments} />
+							<Link to={`/${b.id}`}>
+								<BreedCard id={b.id} name={b.name} image={b.image_url} temperaments={b.temperaments} />
 							</Link>
 						</div>
 					)

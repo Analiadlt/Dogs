@@ -1,13 +1,66 @@
-.newBreed {
+.container {
 	position: relative;
-	margin: 0 auto;
+	margin: 10px;
 	display: inline-block;
-	/* background-color: rosybrown; */
-    width: 100%;
+	/* background-color: rgb(231, 229, 179); */
+	background-color: transparent;
+	width: 20rem;
+	height: 15rem;
 	padding: 0.5rem 4rem 0.25rem 0.25rem;
 	border-style: solid;
-	border-width: 2px;
+	border-width: 5px;
 	border-color: black;
 	border-radius: 0.5rem;
 	font-size: 1rem;
+	overflow: auto; 	/* oculta el contenido que excede al espacio reservado */
+}
+
+.image {
+	width: 130px;
+	height: 130px;
+	float: left;
+	margin: 20px;
+	margin-top: 0;
+	border-radius: 0.5rem;
+}
+
+.container:hover .image {-webkit-transform:scale(1.2);transform:scale(1.2);}
+
+.row {
+	display: grid;
+	flex-direction: column;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+}
+
+.title {
+	width: 20rem;
+	text-transform: capitalize;
+	text-align: center;
+	padding: 5px;
+	margin: .01rem;
+}
+
+.label {
+	padding: 5px;
+	margin: 2rem;
+	font-weight: 500;
+	font-style: italic;
+}
+
+/* .ul {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 10px;
+} */
+
+.li {
+	list-style-type: none;
+	padding: .01rem;
+	font-size: 14px;
+}
+
+ul {
+	text-align: justify;
 }
