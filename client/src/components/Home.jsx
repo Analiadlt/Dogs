@@ -7,9 +7,6 @@ import BreedCard from './BreedCard';
 import NavBar from './NavBar';
 import Paginated from './Paginated';
 import styles from './Home.module.css';
-// import FilterBar from './FilterBar';
-// import OrderBar from './OrderBar';
-
 import { getTemperaments } from '../actions';
 import { getAllBreeds } from '../actions/index';
 
@@ -38,8 +35,6 @@ export default function Home() {
 		<div>
 			
 			<NavBar />
-			{/* <FilterBar />
-			<OrderBar /> */}
 
 			<div className={styles.cards}>
 				{filterBreeds?.map((b) => {

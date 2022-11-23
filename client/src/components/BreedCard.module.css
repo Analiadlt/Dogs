@@ -24,7 +24,8 @@
 	border-radius: 0.5rem;
 }
 
-.container:hover .image {-webkit-transform:scale(1.2);transform:scale(1.2);}
+.container:hover .image {-webkit-transform:scale(1.2);transform:scale(1.2)}
+.container:hover .title {-webkit-transform:scale(1.2);transform:scale(1.2)}
 
 .row {
 	display: grid;

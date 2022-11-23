@@ -3,11 +3,27 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+h5 {
+    display: inline-block;
+    font-size: 1.5rem;
+    position: relative;
+    color: yellow;
+    opacity: 0.6;
+    padding: 1rem;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(9, 9, 97), 0 0 0.2em black;
+}
 
 .filter {
     position: relative;
+    display: inline-block;
     background-color: white;
-    width: 35%;
+    width: 15rem;
     padding: 0.5rem 4rem 0.25rem 0.25rem;
     border-style: solid;
     border-width: 2px;
@@ -15,30 +31,5 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     text-decoration: none;
-    /* display: inline-block; */
-    /* margin: 0 auto; */
-    margin-top: 4rem;
-    margin-right: 6rem;
-}
-
-/* .filter {
-	position: relative;
-	margin: 0 auto;
-	display: inline-block;
-    width: 100%;
-	padding: 0.5rem 4rem 0.25rem 0.25rem;
-	border-style: solid;
-	border-width: 2px;
-	border-color: black;
-	border-radius: 0.5rem;
-	font-size: 1rem;
-	margin-top: 1rem;
-    margin-bottom: 1rem;
-} */
-
-h5 {
-    font-size: 1.5rem;
-    position: relative;
-    margin-top: 5rem;
-    color: yellow;
+    margin: 1rem;
 }

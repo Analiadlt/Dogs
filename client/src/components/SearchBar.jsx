@@ -20,13 +20,13 @@ export default function SearchBar() {
 	};
 
 	return (
-		<div className={styles.searchBar}>
+		<form className={styles.searchBar}>
 			<input
 				type='text'
 				placeholder="Search for..."
 				onChange={(e) => handleInputChange(e)}
 			/>
-			<button onClick={(e) => handleClick(e)}>Search for</button>
-		</div>
+			<button type='submit' onClick={(e) => handleClick(e)}>Search for</button>
+		</form>
 	);
 }

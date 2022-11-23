@@ -38,14 +38,13 @@ export default function FilterBar() {
 	return (
 		<div>
 			<div>
-				<h5>Filters</h5>
+				<h5>Filter by</h5>
 				<select className={styles.filter} onChange={(e) => changeBreedFilter(e)}>
 					<option value="">All Breeds</option>
 					{allBreedsFilter.map((breedName) => (
 						<option value={breedName} key={breedName}>{breedName}</option>
 					))}
 				</select>
-				{/* <h5>Temperament Filter</h5> */}
 				<select className={styles.filter} onChange={(e) => changeTempFilter(e)}>
 					<option value="All">All Temperaments</option>
 					{temperaments.map((temp) => (

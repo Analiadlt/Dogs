@@ -5,17 +5,13 @@
 }
 
 .navbar {
-    /* position: relative; */
     width: 100%;
     height: 9rem;
 }
 
 .filters {
-    /* position: relative;
-    width: 100%;
-    height: .25rem; */
     display: inline-block;
-}
+} 
 
 .title {
     float: left;
@@ -47,6 +43,7 @@
 
 .boton:hover {
     cursor: pointer;
+    background-color: #f1ce3a;
 }
 
 .imageback {

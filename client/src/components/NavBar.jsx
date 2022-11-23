@@ -33,7 +33,7 @@ export default function NavBar() {
 
 			</div>
 			<hr></hr>
-			<div className={styles.filters}>
+			<div className={styles.container}>
 				<FilterBar />
 				<OrderBar />
 			</div>
