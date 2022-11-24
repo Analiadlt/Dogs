@@ -20,8 +20,8 @@ export default function OrderBar() {
 	return (
 		<div>
 			<h5>Alphabetic Order</h5>
-			<button type='button' className={styles.orderbutton} title='Ascendent by name' onClick={() => setOrder('ASC')}><AiFillCaretUp /></button>
-			<button type='button' className={styles.orderbutton} title='Descendent by name' onClick={() => setOrder('DESC')}><AiFillCaretDown /></button>
+			<button className={styles.orderbutton} title='Ascendent by name' onClick={() => setOrder('ASC')}><AiFillCaretUp /></button>
+			<button className={styles.orderbutton} title='Descendent by name' onClick={() => setOrder('DESC')}><AiFillCaretDown /></button>
 		</div>
 	);
 }

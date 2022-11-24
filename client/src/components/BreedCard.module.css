@@ -24,8 +24,9 @@
 	border-radius: 0.5rem;
 }
 
-.container:hover .image {-webkit-transform:scale(1.2);transform:scale(1.2)}
 .container:hover .title {-webkit-transform:scale(1.2);transform:scale(1.2)}
+.container:hover .image {-webkit-transform:scale(1.2);transform:scale(1.2)}
+
 
 .row {
 	display: grid;
@@ -35,6 +36,10 @@
 }
 
 .title {
+	position: relative;
+	z-index: 100;
+	text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 	width: 20rem;
 	text-transform: capitalize;
 	text-align: center;

@@ -1,0 +1,16 @@
+.paginatebutton {
+    position: relative;
+    background-color: white;
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin: auto;
+}
+
+.paginatebutton:hover {
+    cursor: pointer;
+    background-color: #3af149;
+}

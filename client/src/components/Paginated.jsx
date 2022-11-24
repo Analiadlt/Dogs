@@ -2,8 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBreeds } from '../actions/index';
-import styles from './OrderBar.module.css';
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import styles from './Paginated.module.css';
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 
 export default function Paginated() {
@@ -42,8 +42,8 @@ export default function Paginated() {
 
 	return (
 		<div className={styles.footer}>
-			<button type='button' onClick={(e) => { prev(e) }} disabled={pages <= 0}>{"<--Prev"}</button>
-			<button type='button' onClick={(e) => { next(e); }} disabled={filterBreeds.length < 6}>{"Next-->"}</button>
+			<button className={styles.paginatebutton} title='Previous breeds' onClick={(e) => { prev(e) }} disabled={pages <= 0}><AiFillCaretLeft/></button>
+			<button className={styles.paginatebutton} title='Next breeds' onClick={(e) => { next(e); }} disabled={filterBreeds.length < 6}><AiFillCaretRight/></button>
 		</div>
 	);
 }
