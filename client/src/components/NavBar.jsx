@@ -25,11 +25,11 @@ export default function NavBar() {
 					<h1>Breeds of Dogs</h1>
 				</div>
 
-				<SearchBar />
-
-				<p><Link to="/breed" className={styles.boton}>Load a New Breed</Link></p>
-
 				<button className={styles.boton} onClick={(e) => { handleClick(e) }}>Reload All Breeds</button>
+
+				<button className={styles.boton}><Link to="/breed" className={styles.link1}>Load a New Breed</Link></button>
+
+				<SearchBar />
 
 			</div>
 			<hr></hr>

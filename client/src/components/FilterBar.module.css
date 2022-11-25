@@ -13,7 +13,7 @@ h5 {
     display: inline-block;
     font-size: 1.5rem;
     position: relative;
-    color: yellow;
+    color: rgb(255, 230, 0);
     opacity: 0.6;
     padding: 1rem;
     text-shadow: 1px 1px 2px black, 0 0 1em rgb(9, 9, 97), 0 0 0.2em black;

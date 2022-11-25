@@ -29,8 +29,11 @@
 
 .searchBar>button {
 	position: absolute;
-	top: calc(1.25rem + 2px);
+	top: calc(1rem + 1px);
 	right: calc(1rem + 2px);
+	border-radius: 99px;
+	width: 2rem;
+	height: 2rem;
 }
 
 .searchBar>button:hover {

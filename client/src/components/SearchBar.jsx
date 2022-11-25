@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getNameBreeds } from '../actions/index';
 import styles from './SearchBar.module.css';
+import { FcSearch } from "react-icons/fc";
 
 export default function SearchBar() {
 	const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export default function SearchBar() {
 				placeholder="Search for..."
 				onChange={(e) => handleInputChange(e)}
 			/>
-			<button type='submit' onClick={(e) => handleClick(e)}>Search for</button>
+			<button type='submit' title='Search for' onClick={(e) => handleClick(e)}><FcSearch/></button>
 		</form>
 	);
 }

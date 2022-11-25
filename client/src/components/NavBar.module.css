@@ -11,7 +11,7 @@
 
 .filters {
     display: inline-block;
-} 
+}
 
 .title {
     float: left;
@@ -34,7 +34,6 @@
     border-color: black;
     border-radius: 0.5rem;
     font-size: 1rem;
-    text-decoration: none;
     display: flex;
     float: right;
     margin-top: 4rem;
@@ -46,6 +45,9 @@
     background-color: #f1ce3a;
 }
 
+.link1 {
+    text-decoration: none;
+}
 .imageback {
     opacity: 0.6;
     position: absolute;
