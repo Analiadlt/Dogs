@@ -29,15 +29,14 @@ export default function BreedDetail(props) {
 							<h2 className={styles.title}>{myBreed.name}</h2>
 							{/* <img src={myBreed.image_url ? myBreed.image_url : default_img} alt='' width="200px" height="250px" /> */}
 							<h4>
-								<p>Weight-imperial: {myBreed.weight_imperial}</p>
-								<p>Weight-metric: {myBreed.weight_metric}</p>
+								<p>Weight-imperial: {myBreed.weight_imperial} Kg</p>
+								<p>Weight-metric: {myBreed.weight_metric} Kg</p>
 								<br />
-								<p>Height-imperial: {myBreed.height_imperial}</p>
-								<p>Height-metric: {myBreed.height_metric}</p>
+								<p>Height-imperial: {myBreed.height_imperial} cm</p>
+								<p>Height-metric: {myBreed.height_metric} cm</p>
 								<br />
 								<p>Life_span: {myBreed.life_span}</p>
 								<br />
-
 							</h4>
 							{/* <h4>{(typeof id === 'number') ?
 							temperaments?.reduce((e1, e2) => e1 + '-' + e2)

@@ -1,10 +1,9 @@
 .container {
 	position: relative;
-	margin: 10px;
+	margin: 5rem;
 	display: inline-block;
-	/* background-color: rgb(231, 229, 179); */
 	background-color: transparent;
-	width: 25rem;
+	width: 30rem;
 	height: 35rem;
 	padding: 0.5rem 4rem 0.25rem 0.25rem;
 	border-style: solid;
@@ -12,31 +11,46 @@
 	border-color: black;
 	border-radius: 0.5rem;
 	font-size: 1rem;
-	overflow: auto; 	/* oculta el contenido que excede al espacio reservado */
+	overflow: hidden;
+	/* oculta el contenido que excede al espacio reservado */
 }
 
 .title {
-	position: relative;
-	z-index: 100;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
 	text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-	width: 20rem;
-	text-transform: capitalize;
+		1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 5px;
+	margin: .01rem;
+	background: rgba(0, 0, 0, .2);
+	border-radius: 0.5rem;
+}
+
+.imageback {
+	opacity: 0.7;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.detail {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+		1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 	text-align: center;
 	padding: 5px;
 	margin: .01rem;
 }
 
-.imageback {
-    opacity: 0.6;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.detail{
-    position: relative;
-    z-index: 3;
+h4 {	
+	margin-top: 20rem;
 }
